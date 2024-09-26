@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,5 +6,9 @@ import { Injectable } from '@angular/core';
 })
 export class DataserviceService {
 
-  constructor() { }
+  constructor(private httpCliente:HttpClient) { }
+
+  getCategorias(){
+    return this.httpCliente.get(`www.themealdb.com/api/json/v1/1/categories.php`); /* las ` se ponen con alt gr + ]}` */
+  }
 }
