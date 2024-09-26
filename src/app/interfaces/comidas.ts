@@ -1,5 +1,5 @@
 export interface Categorias {
-    categoria: Categoria[];
+    categories: Categoria[];
 }
 
 export interface Categoria {
