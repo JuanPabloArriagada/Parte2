@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataserviceService } from '../../services/dataservice.service';
-import { Categoria } from 'src/app/interfaces/comidas';
+import { NavigationExtras, Router } from '@angular/router';
+import { Categoria } from 'src/app/interfaces/Categorias';
 
 
 
@@ -13,9 +14,10 @@ export class HomePage implements OnInit {
 
 
   Categoria_home:Categoria[]=[];
+  tipo: String = '';
 
 
-  constructor(private dataService:DataserviceService) { }
+  constructor(private dataService:DataserviceService, private router:Router) { }
 
   ngOnInit() {
     console.log("On Init");
@@ -28,4 +30,13 @@ export class HomePage implements OnInit {
     })
   }
 
+  ver_comidas(tipo:string){
+    let xtr:NavigationExtras={
+      state:{
+        tipo_categoria:tipo
+      }
+    }
+    this.router.navigate(['/comidas'], xtr)
+  }
 }
+

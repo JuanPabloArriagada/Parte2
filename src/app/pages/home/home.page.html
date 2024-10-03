@@ -10,7 +10,7 @@
   </ion-text>
   <ion-list>
     <ion-item *ngFor="let categoria of Categoria_home">
-      <ion-card>
+      <ion-card (click)="ver_comidas(categoria.strCategory)">
         <img alt={{categoria.strCategoryThumb}} src={{categoria.strCategoryThumb}} />
         <ion-card-header>
           <ion-card-title>{{categoria.strCategory}}</ion-card-title>
