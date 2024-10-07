@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Meal } from 'src/app/interfaces/lista-comidas';
-import { Router } from '@angular/router';
+import { NavigationExtras, Router } from '@angular/router';
 import { DataserviceService } from '../../services/dataservice.service';
 
 @Component({
@@ -28,5 +28,14 @@ export class ComidasPage implements OnInit {
       console.log(datos);
       this.Lista_comidas.push(...datos.meals)  // Asignar los datos recibidos a la lista de comidas
     });
+  }
+
+  ver_receta(id:string){
+    let xtr:NavigationExtras={
+      state:{
+        id_receta:id
+      }
+    }
+    this.router.navigate(['/receta'], xtr)
   }
 }

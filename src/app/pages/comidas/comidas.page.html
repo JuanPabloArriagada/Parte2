@@ -14,7 +14,7 @@
   </ion-text>
   <ion-list>
     <ion-item *ngFor="let comidas of Lista_comidas">
-      <ion-card>
+      <ion-card (click)="ver_receta(comidas.idMeal)">
         <img alt={{comidas.strMeal}} src={{comidas.strMealThumb}} />
         <ion-card-header>
           <ion-card-title>{{comidas.strMeal}}</ion-card-title>

@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button> Atras
+      </ion-back-button>
+    </ion-buttons>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let lista_receta of lista_receta">
+    <ion-card-header>
+      <ion-card-title>{{ lista_receta.strMeal }}</ion-card-title>
+      <ion-card-subtitle>{{ lista_receta.strCategory }} - {{ lista_receta.strArea }}</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <img [src]="lista_receta.strMealThumb" alt="{{ lista_receta.strMeal }}" />
+
+      <h2>Instrucciones</h2>
+      <p>{{ lista_receta.strInstructions }}</p>
+
+      <h2>Ingredientes</h2>
+      <ul>
+        <!-- <li *ngFor="let  of lista_receta">
+          <h2>{{Ingrediente}}</h2>
+        </li> -->
+      </ul>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
