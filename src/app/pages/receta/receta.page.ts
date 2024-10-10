@@ -3,6 +3,7 @@ import { DataserviceService } from '../../services/dataservice.service';
 import { Router } from '@angular/router';
 import { Receta } from 'src/app/interfaces/receta';
 import { IonList } from '@ionic/angular';
+import { LocalDBService } from '../../services/local-db.service';
 
 @Component({
   selector: 'app-receta',
@@ -16,7 +17,10 @@ export class RecetaPage implements OnInit {
   titulo: string ='';
   id_receta: string = '';
 
-  constructor(private dataService:DataserviceService, private router:Router) { }
+  constructor(
+    private dataService:DataserviceService, 
+    private router:Router, 
+    private db:LocalDBService) { }
 
   ngOnInit() {
     let datosextra = this.router.getCurrentNavigation()?.extras.state;
@@ -36,7 +40,7 @@ export class RecetaPage implements OnInit {
 
 
   favoritos(){
-    console.log("favoritos");
     console.log(this.id_receta);
+    this.db.guardar(this.id_receta, "hola")
   }
 }
