@@ -14,8 +14,7 @@ export class RecetaPage implements OnInit {
   id: string = '';
   lista_receta: Receta[]=[];
   titulo: string ='';
-  lista_ingredientes:IonList[]=[];
-  lista_pasos:IonList[]=[];
+  id_receta: string = '';
 
   constructor(private dataService:DataserviceService, private router:Router) { }
 
@@ -30,8 +29,15 @@ export class RecetaPage implements OnInit {
   cargarReceta(id:string){
     this.dataService.getRecetas(id).subscribe(datos=>{
       this.lista_receta.push(...datos.meals)
+      this.id_receta = this.lista_receta[0].idMeal;
+      this.titulo = this.lista_receta[0].strMeal;
+      console.log(this.id_receta);
   })
   }
 
-  
+
+  favoritos(){
+    console.log("favoritos");
+    console.log(this.id_receta);
+  }
 }
