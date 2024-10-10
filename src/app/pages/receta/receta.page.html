@@ -3,6 +3,11 @@
     <ion-buttons slot="start">
       <ion-back-button> Atras
       </ion-back-button>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>{{""}}</ion-title>
+        </ion-toolbar>
+      </ion-header>
     </ion-buttons>
     
   </ion-toolbar>
@@ -29,4 +34,20 @@
       </ul>
     </ion-card-content>
   </ion-card>
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button>
+      <ion-icon name="chevron-up-circle"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button>
+        <ion-icon name="document"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button>
+        <ion-icon name="color-palette"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button>
+        <ion-icon name="globe"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
 </ion-content>
