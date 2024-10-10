@@ -31,7 +31,6 @@ export class RecetaPage implements OnInit {
       this.lista_receta.push(...datos.meals)
       this.id_receta = this.lista_receta[0].idMeal;
       this.titulo = this.lista_receta[0].strMeal;
-      console.log(this.id_receta);
   })
   }
 
